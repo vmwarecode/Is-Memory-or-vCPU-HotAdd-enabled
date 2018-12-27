@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Content>
+    <Views>
+        <ViewDef id="811f232c-e915-4ba1-b25c-61dc55c669a6">
+            <Title>Is Memory or vCPU HotAdd enabled?</Title>
+            <Description>This view provides a list of all the virtual machines where Memory or vCPU HotAdd is enabled.
+NOTE, No Data means no VM's have either of these features enabled</Description>
+            <SubjectType adapterKind="VMWARE" filter="[[{&quot;condition&quot;:&quot;EQUALS&quot;,&quot;metricKey&quot;:&quot;config|extraConfig|mem_hotadd&quot;,&quot;metricValue&quot;:{&quot;isStringMetric&quot;:true,&quot;value&quot;:&quot;TRUE&quot;},&quot;filterType&quot;:&quot;properties&quot;}],[{&quot;condition&quot;:&quot;EQUALS&quot;,&quot;metricKey&quot;:&quot;config|extraConfig|vcpu_hotadd&quot;,&quot;metricValue&quot;:{&quot;isStringMetric&quot;:true,&quot;value&quot;:&quot;TRUE&quot;},&quot;filterType&quot;:&quot;properties&quot;}]]" resourceKind="VirtualMachine" type="descendant"/>
+            <SubjectType adapterKind="VMWARE" filter="[[{&quot;condition&quot;:&quot;EQUALS&quot;,&quot;metricKey&quot;:&quot;config|extraConfig|mem_hotadd&quot;,&quot;metricValue&quot;:{&quot;isStringMetric&quot;:true,&quot;value&quot;:&quot;TRUE&quot;},&quot;filterType&quot;:&quot;properties&quot;}],[{&quot;condition&quot;:&quot;EQUALS&quot;,&quot;metricKey&quot;:&quot;config|extraConfig|vcpu_hotadd&quot;,&quot;metricValue&quot;:{&quot;isStringMetric&quot;:true,&quot;value&quot;:&quot;TRUE&quot;},&quot;filterType&quot;:&quot;properties&quot;}]]" resourceKind="VirtualMachine" type="self"/>
+            <Usage>dashboard</Usage>
+            <Usage>report</Usage>
+            <Usage>details</Usage>
+            <Usage>content</Usage>
+            <Controls>
+                <Control id="time-interval-selector_id_31" type="time-interval-selector" visible="false">
+                    <Property name="advancedTimeMode" value="false"/>
+                    <Property name="unit" value="DAYS"/>
+                    <Property name="count" value="7"/>
+                </Control>
+                <Control id="attributes-selector_id_32" type="attributes-selector" visible="false">
+                    <Property name="attributeInfos">
+                        <List>
+                            <Item>
+<Value>
+    <Property name="objectType" value="RESOURCE"/>
+    <Property name="attributeKey" value="config|extraConfig|mem_hotadd"/>
+    <Property name="isStringAttribute" value="true"/>
+    <Property name="adapterKind" value="VMWARE"/>
+    <Property name="resourceKind" value="VirtualMachine"/>
+    <Property name="rollUpCount" value="0"/>
+    <Property name="transformations">
+        <List>
+            <Item value="CURRENT"/>
+        </List>
+    </Property>
+    <Property name="isProperty" value="true"/>
+    <Property name="displayName" value="Memory Hot Add Enabled?"/>
+</Value>
+                            </Item>
+                            <Item>
+<Value>
+    <Property name="objectType" value="RESOURCE"/>
+    <Property name="attributeKey" value="config|extraConfig|vcpu_hotadd"/>
+    <Property name="isStringAttribute" value="true"/>
+    <Property name="adapterKind" value="VMWARE"/>
+    <Property name="resourceKind" value="VirtualMachine"/>
+    <Property name="rollUpCount" value="0"/>
+    <Property name="transformations">
+        <List>
+            <Item value="CURRENT"/>
+        </List>
+    </Property>
+    <Property name="isProperty" value="true"/>
+    <Property name="displayName" value="CPU Hot Add Enabled?"/>
+</Value>
+                            </Item>
+                        </List>
+                    </Property>
+                </Control>
+                <Control id="pagination-control_id_33" type="pagination-control" visible="true">
+                    <Property name="start" value="0"/>
+                    <Property name="size" value="50"/>
+                </Control>
+                <Control id="metadata_id_34" type="metadata" visible="false">
+                    <Property name="maxPointsCount" value="5000"/>
+                    <Property name="distributionColor" value="6870C4"/>
+                    <Property name="hideObjectNameColumn" value="false"/>
+                    <Property name="listTopResultSize" value="-1"/>
+                </Control>
+            </Controls>
+            <DataProviders>
+                <DataProvider dataType="list-view" id="list-view_id_30"/>
+            </DataProviders>
+            <Presentation type="list"/>
+        </ViewDef>
+    </Views>
+</Content>
