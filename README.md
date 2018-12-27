@@ -1,0 +1,1 @@
+# Is-Memory-or-vCPU-HotAdd-enabled
